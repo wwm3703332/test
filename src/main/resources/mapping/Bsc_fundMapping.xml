@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wwm.test.mapper.Bsc_fundMapper">
+
+    <resultMap id="BaseResultMap" type="com.wwm.test.entity.Bsc_fund">
+        <result column="settunit" jdbcType="INTEGER" property="settunit" />
+        <result column="fundcode" jdbcType="VARCHAR" property="fundcode" />
+        <result column="fundname" jdbcType="VARCHAR" property="fundname" />
+        <result column="fundtype" jdbcType="VARCHAR" property="fundtype" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+    </resultMap>
+
+    <select id="getFund" resultType="com.wwm.test.entity.Bsc_fund">
+        select * from bsc_fund where settunit = #{settunit}
+    </select>
+
+</mapper>
