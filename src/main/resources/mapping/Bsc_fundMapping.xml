@@ -11,7 +11,12 @@
     </resultMap>
 
     <select id="getFund" resultType="com.wwm.test.entity.Bsc_fund">
-        select * from bsc_fund where settunit = #{settunit}
+        select * from bsc_fund
+        <where>
+            <if test="fundcode != null">
+                and fundcode like '%${fundcode}%'
+            </if>
+        </where>
     </select>
 
 </mapper>

@@ -5,11 +5,18 @@ import com.wwm.test.mapper.Bsc_fundMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class Bsc_fundService {
+    private final Bsc_fundMapper bscFundMapper;
+
     @Autowired
-    Bsc_fundMapper bscFundMapper;
-    public Bsc_fund getFund(int settunit){
-        return bscFundMapper.getFund(settunit);
+    public Bsc_fundService(Bsc_fundMapper bscFundMapper) {
+        this.bscFundMapper = bscFundMapper;
+    }
+
+    public ArrayList<Bsc_fund> getFund(String fundcode){
+        return bscFundMapper.getFund(fundcode);
     }
 }
